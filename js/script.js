@@ -54,25 +54,28 @@ function getRandomQuote() {
 /***
  * `printQuote` function
 ***/
+
 function printQuote() {
   let randomQuotes = getRandomQuote();
-  let  displayRandomQuote = "<p class='quote'>" + randomQuotes.quote + "</p>";
-       displayRandomQuote += "<p class='source'>" + randomQuotes.source;
+  let  displayRandomQuote = `<p class='quote'> ${randomQuotes.quote}</p>
+                             <p class='source'> ${randomQuotes.source}`
         if (quotes.citation) {
-            displayRandomQuote += "<span class='citation'>" + randomQuotes.citation + "</span>";
+            displayRandomQuote += `<span class='citation'> ${randomQuotes.citation} </span>`;
         } else {
           displayRandomQuote += "";
         }
         if (quotes.year) {
-            displayRandomQuote += "<span class='year'>" + randomQuotes.year + "</span>";
+            displayRandomQuote += `<span class='year'> ${randomQuotes.year} </span>`;
         } else {
           displayRandomQuote += "";
         } if (quotes.tags) {
-          displayRandomQuote += "<p class='tags'>" + randomQoutes.tags + "</p>";
+          displayRandomQuote += `<p class='tags'> ${randomQuotes.tags} </p>`;
+        } else {
+          displayRandomQuote += ""; 
         }
   }
 
-  console.log(printQuote());
+console.log(printQuote());
 
 /***
  * click event listener for the print quote button
